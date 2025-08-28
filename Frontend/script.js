@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000/api/tasks";
+const API_URL = "https://todo2-hred.onrender.com";
 
 async function fetchTasks() {
   const res = await fetch(API_URL);
