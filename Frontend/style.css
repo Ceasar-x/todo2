@@ -1,0 +1,146 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f7fa;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap; /* makes it responsive */
+}
+
+.form input {
+  flex: 1;
+  min-width: 150px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form button {
+  padding: 10px 15px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.form button:hover {
+  background: #0056b3;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: #f9f9f9;
+  padding: 12px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: slideIn 0.4s forwards;
+}
+
+li.removed {
+  animation: fadeOut 0.3s forwards;
+}
+
+li.completed span {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.actions button {
+  margin-left: 5px;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.actions button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+button.edit { background: #ffc107; color: white; }
+button.delete { background: #dc3545; color: white; }
+button.toggle { background: #28a745; color: white; }
+button.edit:hover { background: #e0a800; }
+button.delete:hover { background: #c82333; }
+button.toggle:hover { background: #218838; }
+
+/* 🔥 Animations */
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* ✅ Responsiveness */
+@media (max-width: 600px) {
+  .container {
+    margin: 20px;
+    padding: 15px;
+  }
+
+  .form {
+    flex-direction: column;
+  }
+
+  .form button {
+    width: 100%;
+  }
+
+  li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .actions {
+    margin-top: 8px;
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+  }
+}
